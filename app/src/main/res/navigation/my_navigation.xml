@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navigation"
+    app:startDestination="@id/listOfItems">
+
+    <fragment
+        android:id="@+id/listOfItems"
+        android:name="com.example.mvvmexercise.ui.fragmets.ListOfItems"
+        android:label="fragment_list_of_items"
+        tools:layout="@layout/fragment_list_of_items" >
+        <action
+            android:id="@+id/action_listOfItems_to_editItemFragment"
+            app:destination="@id/editItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editItemFragment"
+        android:name="com.example.mvvmexercise.ui.fragmets.EditItemFragment"
+        android:label="fragment_edit_item"
+        tools:layout="@layout/fragment_edit_item" >
+        <argument
+            android:name="expense_id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_editItemFragment_to_listOfItems"
+            app:destination="@id/listOfItems" />
+    </fragment>
+</navigation>
